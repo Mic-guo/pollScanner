@@ -1,8 +1,9 @@
 import { Stack } from "expo-router";
-import App from "./index";
+import Home from "./home";
+import Camera from "./index";
 
 export default function RootLayout() {
   return (
-    <App />
+    <Home />
   );
 }
