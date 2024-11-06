@@ -5,42 +5,42 @@ const Home: React.FC = () => {
     const [isScanComplete, setIsScanComplete] = useState(false);
     const [isReviewComplete, setIsReviewComplete] = useState(false);
 
-    const handleScanBallot = () => {
+    const handleScanTape = () => {
         // Trigger navigation to the scan page or scan functionality here
         // Simulate a successful video upload
-        Alert.alert("Scan Ballot", "Video uploaded successfully.");
+        Alert.alert("Scan Poll Tape", "Video uploaded successfully.");
         setIsScanComplete(true);
     };
 
-    const handleReviewBallot = () => {
+    const handleReviewTape = () => {
         // Trigger navigation to the review page or review functionality here
-        Alert.alert("Review Ballot", "Review acknowledged.");
+        Alert.alert("Review Poll Tape", "Review acknowledged.");
         setIsReviewComplete(true);
     };
 
-    const handlePublishBallot = () => {
+    const handlePublishTape = () => {
         // Trigger publishing action here
-        Alert.alert("Publish Ballot", "Ballot has been published.");
+        Alert.alert("Publish Poll Tape", "Poll Tape has been published.");
     };
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.button} onPress={handleScanBallot}>
-                <Text style={styles.buttonText}>Scan Ballot</Text>
+            <TouchableOpacity style={styles.button} onPress={handleScanTape}>
+                <Text style={styles.buttonText}>Scan Poll Tape</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.button, !isScanComplete && styles.disabledButton]}
-                onPress={handleReviewBallot}
+                onPress={handleReviewTape}
                 disabled={!isScanComplete}
             >
-                <Text style={styles.buttonText}>Review Ballot</Text>
+                <Text style={styles.buttonText}>Review Poll Tape</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={[styles.button, (!isScanComplete || !isReviewComplete) && styles.disabledButton]}
-                onPress={handlePublishBallot}
+                onPress={handlePublishTape}
                 disabled={!isScanComplete || !isReviewComplete}
             >
-                <Text style={styles.buttonText}>Publish Ballot</Text>
+                <Text style={styles.buttonText}>Publish Poll Tape</Text>
             </TouchableOpacity>
         </View>
     );
