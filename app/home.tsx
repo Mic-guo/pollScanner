@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from './_layout';
+
+type HomeScreenNavigationProp = NavigationProp<RootStackParamList, 'Home'>;
 
 const Home: React.FC = () => {
     const [isScanComplete, setIsScanComplete] = useState(false);
     const [isReviewComplete, setIsReviewComplete] = useState(false);
+    const navigation = useNavigation<HomeScreenNavigationProp>();
+
 
     const handleScanTape = () => {
         // Trigger navigation to the scan page or scan functionality here
         // Simulate a successful video upload
-        Alert.alert("Scan Poll Tape", "Video uploaded successfully.");
-        setIsScanComplete(true);
+        // Alert.alert("Scan Poll Tape", "Video uploaded successfully.");
+        navigation.navigate("Camera");
+        // setIsScanComplete(true);
     };
 
     const handleReviewTape = () => {
