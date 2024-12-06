@@ -1,0 +1,32 @@
+{
+    "election_header": {
+        "type": "General Election",
+        "date": "2024-11-05",
+        "location": {
+            "county": "Genesee County",
+            "state": "Michigan",
+            "precinct": {
+                "township": "Grand Blanc Township",
+                "number": 9
+            }
+        }
+    },
+    "voting_system": {
+        "type": "Verity Scan with Relay",
+        "serial_number": "S1700797005",
+        "version": "2.7.6"
+    },
+    "reports": {
+        "open_polls": {
+            "timestamp": "2024-10-21T13:17:00",
+            "counters": {
+                "ballot_counter": 0,
+                "lifetime_counter": 9454
+            },
+            "status": {
+                "polls_open": true,
+                "accepting_ballots": true
+            }
+        }
+    }
+}

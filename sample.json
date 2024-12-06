@@ -1,0 +1,114 @@
+{
+    "election_header": {
+        "type": "General Election",
+        "date": "2024-11-05",
+        "location": {
+            "county": "Washtenaw",
+            "state": "Michigan",
+            "precinct": {
+                "township": "Ann Arbor",
+                "number": 12
+            }
+        }
+    },
+    "voting_system": {
+        "type": "AccuVote TSX",
+        "serial_number": "SN12345XYZ",
+        "version": "1.4.3"
+    },
+    "reports": {
+        "open_polls": {
+            "timestamp": "2024-11-05T07:00:00",
+            "counters": {
+                "ballot_counter": 0,
+                "lifetime_counter": 12567
+            },
+            "status": {
+                "polls_open": true,
+                "accepting_ballots": true
+            }
+        },
+        "closed_polls": {
+            "timestamp": "2024-11-05T20:00:00",
+            "counters": {
+                "ballot_counter": 432,
+                "lifetime_counter": 13000
+            },
+            "status": {
+                "polls_open": false,
+                "accepting_ballots": false
+            }
+        }
+    },
+    "tally_report": {
+        "precincts_included": 1
+    },
+    "results": {
+        "straight_party": {
+            "title": "Straight Party Ticket",
+            "votes": {
+                "Democratic Party": 200,
+                "Republican Party": 180,
+                "Green Party": 10,
+                "Libertarian Party": 5
+            },
+            "metadata": {
+                "undervotes": 20,
+                "overvotes": 2
+            }
+        },
+        "contests": [
+            {
+                "title": "President and Vice President",
+                "candidates": [
+                    {
+                        "ticket": ["Jane Doe", "John Smith"],
+                        "votes": 200
+                    },
+                    {
+                        "ticket": ["Alex Johnson", "Emily White"],
+                        "votes": 180
+                    }
+                ],
+                "metadata": {
+                    "write_ins": 5,
+                    "undervotes": 30,
+                    "overvotes": 1,
+                    "invalid_votes": 3
+                }
+            },
+            {
+                "title": "Governor",
+                "candidates": [
+                    {
+                        "ticket": ["Sam Brown", null],
+                        "votes": 220
+                    },
+                    {
+                        "ticket": ["Chris Green", null],
+                        "votes": 190
+                    }
+                ],
+                "metadata": {
+                    "write_ins": 2,
+                    "undervotes": 15,
+                    "overvotes": 0,
+                    "invalid_votes": 1
+                }
+            }
+        ]
+    },
+    "totals": {
+        "precinct_ballot_count": {
+            "precinct": {
+                "name": "Ann Arbor Precinct 12",
+                "total": 432
+            },
+            "grand_total": 432
+        },
+        "certification": {
+            "statement": "We hereby certify the above results as accurate and complete.",
+            "signatures_required": 2
+        }
+    }
+}

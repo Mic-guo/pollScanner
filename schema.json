@@ -1,0 +1,72 @@
+{
+    "_schema_instructions": "Replace all values with actual data. Remove this _schema_instructions field in output. Maintain exact field names.",
+    "election_header": {
+        "type": "string: exact election name",
+        "date": "string: YYYY-MM-DD format",
+        "location": {
+            "county": "string: county name",
+            "state": "string: state name",
+            "precinct": {
+                "township": "string: township name",
+                "number": "integer: precinct number"
+            }
+        }
+    },
+    "voting_system": {
+        "type": "string: exact machine name",
+        "serial_number": "string: exact S/N",
+        "version": "string: version number"
+    },
+    "reports": {
+        "open_polls": {
+            "timestamp": "string: YYYY-MM-DDThh:mm:ss format",
+            "counters": {
+                "ballot_counter": "integer",
+                "lifetime_counter": "integer"
+            },
+            "status": {
+                "polls_open": true,
+                "accepting_ballots": true
+            }
+        },
+        "closed_polls": "optional: same structure as open_polls"
+    },
+    "tally_report": {
+        "precincts_included": "integer: number of precincts in report"
+    },
+    "results": {
+        "contests": [
+            {
+                "title": "string: exact contest name",
+                "candidates": [
+                    {
+                        "ticket": [
+                            "string: president name",
+                            "string: vice president name"
+                        ],
+                        "votes": "integer"
+                    }
+                ],
+                "metadata": {
+                    "write_ins": "integer",
+                    "undervotes": "integer",
+                    "overvotes": "integer",
+                    "invalid_votes": "integer"
+                }
+            }
+        ]
+    },
+    "totals": {
+        "precinct_ballot_count": {
+            "precinct": {
+                "name": "string: precinct name",
+                "total": "integer: ballot count"
+            },
+            "grand_total": "integer: total ballot count"
+        },
+        "certification": {
+            "statement": "string: exact certification statement",
+            "signatures_required": "integer: number of signature lines shown"
+        }
+    }
+}
