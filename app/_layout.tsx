@@ -10,8 +10,11 @@ export type RootStackParamList = {
   Camera: undefined;
   Review: {
     pollTapeData: any;
+    onSave?: (updatedData: any) => void;
   };
+  // ... other routes
 };
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

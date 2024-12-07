@@ -47,13 +47,13 @@ const Home: React.FC = () => {
 
             if (!result.canceled && result.assets && result.assets[0]) {
                 const videoUri = result.assets[0].uri;
-                
+
                 // Log the video details
                 console.log('Video URI:', videoUri);
-                
+
                 const formData = new FormData();
                 const fileType = videoUri.endsWith('.mov') ? 'video/quicktime' : 'video/mp4';
-                
+
                 formData.append('video', {
                     uri: Platform.OS === 'ios' ? videoUri.replace('file://', '') : videoUri,
                     type: fileType,
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
             // Log more details about the response
             if (error instanceof Error) {
                 Alert.alert(
-                    "Upload Failed", 
+                    "Upload Failed",
                     `Error: ${error.message}`
                 );
             }
@@ -105,7 +105,13 @@ const Home: React.FC = () => {
             Alert.alert("Error", "No poll tape data available to review");
             return;
         }
-        navigation.navigate("Review", { pollTapeData });
+        navigation.navigate("Review", {
+            pollTapeData,
+            onSave: (updatedData: any) => {
+                setPollTapeData(updatedData);
+                Alert.alert("Success", "Changes saved successfully!");
+            }
+        });
     };
 
     const handlePublishTape = () => {
@@ -117,14 +123,14 @@ const Home: React.FC = () => {
         <View style={styles.container}>
             <View style={styles.buttonContainer}>
                 <View style={styles.buttonRow}>
-                    <TouchableOpacity 
-                        style={[styles.button, styles.halfButton]} 
+                    <TouchableOpacity
+                        style={[styles.button, styles.halfButton]}
                         onPress={handleScanTape}
                     >
                         <Text style={styles.buttonText}>Scan Poll Tape</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity 
-                        style={[styles.button, styles.halfButton]} 
+                    <TouchableOpacity
+                        style={[styles.button, styles.halfButton]}
                         onPress={handleUploadTape}
                     >
                         <Text style={styles.buttonText}>Upload Poll Tape</Text>
@@ -136,7 +142,7 @@ const Home: React.FC = () => {
                     // style={[styles.button, !isScanComplete && styles.disabledButton]}
                     style={[styles.button]}
                     onPress={handleReviewTape}
-                    // disabled={!isScanComplete}
+                // disabled={!isScanComplete}
                 >
                     <Text style={styles.buttonText}>Review Poll Tape</Text>
                 </TouchableOpacity>

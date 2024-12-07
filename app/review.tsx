@@ -1,6 +1,6 @@
-import React, { useRef, useState, useCallback } from 'react';
-import { View, Text, ScrollView, StyleSheet, Platform, TextInput } from 'react-native';
-import { RouteProp } from '@react-navigation/native';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
+import { View, Text, ScrollView, StyleSheet, Platform, TextInput, TouchableOpacity } from 'react-native';
+import { RouteProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from './_layout';
 import { green } from 'react-native-reanimated/lib/typescript/Colors';
 
@@ -13,13 +13,41 @@ type Props = {
 const Review: React.FC<Props> = ({ route }) => {
     const { pollTapeData } = route.params;
     const [editablePollTapeData, setEditablePollTapeData] = useState(pollTapeData);
-
     const typeInputRef = useRef<TextInput>(null);
+    const [hasChanges, setHasChanges] = useState(false);
+    const navigation = useNavigation();
+
+    const handleSave = useCallback(() => {
+        if (route.params.onSave) {
+            route.params.onSave(editablePollTapeData);
+            setHasChanges(false);
+        }
+    }, [editablePollTapeData, route.params]);
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity
+                    onPress={handleSave}
+                    disabled={!hasChanges}
+                    style={{ marginRight: 15 }}
+                >
+                    <Text style={{
+                        color: hasChanges ? '#007AFF' : '#A9A9A9',
+                        fontSize: 17,
+                        fontWeight: '600'
+                    }}>
+                        Save
+                    </Text>
+                </TouchableOpacity>
+            ),
+        });
+    }, [navigation, handleSave, hasChanges]);
 
     const handleInputSubmit = useCallback(
         (path: string, value: string) => {
             setEditablePollTapeData((prev: typeof editablePollTapeData) => {
-                const updatedData = JSON.parse(JSON.stringify(prev)); // Deep copy
+                const updatedData = JSON.parse(JSON.stringify(prev));
                 const keys = path.split('.');
                 let target = updatedData;
 
@@ -28,7 +56,7 @@ const Review: React.FC<Props> = ({ route }) => {
                 }
 
                 target[keys[keys.length - 1]] = value;
-
+                setHasChanges(true);
                 return updatedData;
             });
         },
@@ -163,6 +191,7 @@ const Review: React.FC<Props> = ({ route }) => {
                         target[keys[keys.length - 1]] = newDate.toISOString();
                     }
 
+                    setHasChanges(true);
                     return updatedData;
                 } catch (error) {
                     console.warn('Error updating timestamp:', error);
@@ -344,6 +373,187 @@ const Review: React.FC<Props> = ({ route }) => {
         </>
     );
 
+    type PollTapeResults = {
+        results: {
+            contests: Array<{
+                title: string;
+                candidates: Array<{
+                    ticket: string[];
+                    votes: string;
+                }>;
+                metadata: {
+                    write_ins: string;
+                    undervotes: string;
+                    overvotes: string;
+                    invalid_votes: string;
+                };
+            }>;
+        };
+    };
+
+    const ContestDisplay: React.FC<{
+        contest: {
+            title: string;
+            candidates: Array<{ ticket: string[]; votes: string }>;
+            metadata: {
+                write_ins: string;
+                undervotes: string;
+                overvotes: string;
+                invalid_votes: string;
+            };
+        };
+        contestIndex: number;
+    }> = ({ contest, contestIndex }) => (
+        <View style={styles.contestContainer}>
+            <Text style={styles.contestTitle}>{contest.title}</Text>
+
+            {contest.candidates.map((candidate, idx) => (
+                <View key={idx} style={[styles.rowJustify, styles.candidateRow]}>
+                    <View style={styles.ticketContainer}>
+                        {candidate.ticket.map((name, nameIdx) => (
+                            <Text key={nameIdx} style={[
+                                styles.pollTapeText,
+                                styles.ticketText,
+                                nameIdx !== candidate.ticket.length - 1 && styles.multiTicketText
+                            ]}>
+                                {name}
+                            </Text>
+                        ))}
+                    </View>
+                    <View style={styles.voteContainer}>
+                        <TextInput
+                            style={[styles.pollTapeText, styles.editableText, { marginTop: -15 }]}
+                            placeholder="Enter votes"
+                            placeholderTextColor="red"
+                            defaultValue={candidate.votes}
+                            onEndEditing={(e) => handleInputSubmit(
+                                `results.contests.${contestIndex}.candidates.${idx}.votes`,
+                                e.nativeEvent.text
+                            )}
+                        />
+                    </View>
+                </View>
+            ))}
+
+            {/* Metadata */}
+            <View style={[styles.tighterGroup, styles.rowJustify]}>
+                <Text style={styles.pollTapeText}>Write-ins:</Text>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText]}
+                    placeholder="Enter write-ins"
+                    placeholderTextColor="red"
+                    defaultValue={contest.metadata.write_ins}
+                    onEndEditing={(e) => handleInputSubmit(
+                        `results.contests.${contestIndex}.metadata.write_ins`,
+                        e.nativeEvent.text
+                    )}
+                />
+            </View>
+
+            <View style={[styles.tighterGroup, styles.rowJustify]}>
+                <Text style={styles.pollTapeText}>Undervotes:</Text>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText]}
+                    placeholder="Enter undervotes"
+                    placeholderTextColor="red"
+                    defaultValue={contest.metadata.undervotes}
+                    onEndEditing={(e) => handleInputSubmit(
+                        `results.contests.${contestIndex}.metadata.undervotes`,
+                        e.nativeEvent.text
+                    )}
+                />
+            </View>
+
+            <View style={[styles.tighterGroup, styles.rowJustify]}>
+                <Text style={styles.pollTapeText}>Overvotes:</Text>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText]}
+                    placeholder="Enter overvotes"
+                    placeholderTextColor="red"
+                    defaultValue={contest.metadata.overvotes}
+                    onEndEditing={(e) => handleInputSubmit(
+                        `results.contests.${contestIndex}.metadata.overvotes`,
+                        e.nativeEvent.text
+                    )}
+                />
+            </View>
+
+            <View style={[styles.tighterGroup, styles.rowJustify]}>
+                <Text style={styles.pollTapeText}>Invalid votes:</Text>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText]}
+                    placeholder="Enter invalid votes"
+                    placeholderTextColor="red"
+                    defaultValue={contest.metadata.invalid_votes}
+                    onEndEditing={(e) => handleInputSubmit(
+                        `results.contests.${contestIndex}.metadata.invalid_votes`,
+                        e.nativeEvent.text
+                    )}
+                />
+            </View>
+
+            <View style={styles.contestSpacer} />
+        </View>
+    );
+
+    const PrecinctBallotCount: React.FC<{
+        totals: {
+            precinct_ballot_count: {
+                precinct: {
+                    name: string;
+                    total: string;
+                };
+                grand_total: string;
+            };
+        };
+    }> = ({ totals }) => (
+        <View style={styles.ballotCountContainer}>
+
+            <Text style={[styles.pollTapeText, { textAlign: 'center' }]}>Precinct Ballot Count</Text>
+
+            {/* Column Headers */}
+            <View style={[styles.rowJustify, styles.headerRow]}>
+                <Text style={styles.pollTapeText}>Pct</Text>
+                <Text style={styles.pollTapeText}>Total</Text>
+            </View>
+
+            {/* Separator Line */}
+            <View style={styles.separatorLine} />
+
+            {/* Precinct Row */}
+            <View style={[styles.rowJustify, styles.dataRow]}>
+                <View style={styles.precinctContainer}>
+                    <Text style={styles.pollTapeText}>{totals.precinct_ballot_count.precinct.name}</Text>
+                </View>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText, styles.totalInput]}
+                    placeholder="Enter total"
+                    placeholderTextColor="red"
+                    defaultValue={totals.precinct_ballot_count.precinct.total}
+                    onEndEditing={(e) => handleInputSubmit('totals.precinct_ballot_count.precinct.total', e.nativeEvent.text)}
+                />
+            </View>
+
+            {/* Separator Line */}
+            <View style={styles.doubleSeparatorLine} />
+
+            {/* Grand Total Row */}
+            <View style={[styles.rowJustify, styles.dataRow]}>
+                <Text style={styles.pollTapeText}>Total</Text>
+                <TextInput
+                    style={[styles.pollTapeText, styles.editableText, styles.totalInput]}
+                    placeholder="Enter grand total"
+                    placeholderTextColor="red"
+                    defaultValue={totals.precinct_ballot_count.grand_total}
+                    onEndEditing={(e) => handleInputSubmit('totals.precinct_ballot_count.grand_total', e.nativeEvent.text)}
+                />
+            </View>
+
+            <View style={styles.contestSpacer} />
+        </View>
+    );
+
+
     return (
         <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
             <View style={styles.content}>
@@ -446,6 +656,17 @@ const Review: React.FC<Props> = ({ route }) => {
                         <Text style={styles.pollTapeHeaderText}>Precinct {editablePollTapeData.election_header.location.precinct.number}</Text>
                     </View>
 
+                    {(editablePollTapeData as PollTapeResults).results.contests.map((contest, index) => (
+                        <ContestDisplay
+                            key={index}
+                            contest={contest}
+                            contestIndex={index}
+                        />
+                    ))}
+
+                    <View style={styles.sectionSpacer} />
+
+                    <PrecinctBallotCount totals={editablePollTapeData.totals} />
 
                 </View>
             </View>
@@ -553,11 +774,71 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ccc',
         marginBottom: 20,
         color: 'blue'
-        // backgroundColor: 'grey',
     },
     row: {
         flexDirection: 'row',
         alignItems: 'center',
+    },
+    contestContainer: {
+        marginVertical: 10,
+        width: '100%',
+    },
+    contestTitle: {
+        fontSize: 18,
+        textDecorationLine: 'underline',
+        marginBottom: 10,
+        fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
+    },
+    candidateRow: {
+        minHeight: 50,  // Ensure minimum height for single line items
+    },
+    ticketContainer: {
+        flex: 1,
+        marginRight: 10,
+        justifyContent: 'center',
+    },
+    voteContainer: {
+        justifyContent: 'center',  // Center vote input vertically
+        alignItems: 'flex-end',    // Align to the right
+    },
+    contestSpacer: {
+        height: 20,
+    },
+    ticketText: {
+        marginBottom: 20,
+    },
+    multiTicketText: {
+        marginBottom: 2, // Reduced spacing for multiple tickets
+    },
+    ballotCountContainer: {
+        width: '100%',
+    },
+    headerRow: {
+        marginVertical: 10,
+    },
+    dataRow: {
+        marginVertical: 5,
+    },
+    precinctContainer: {
+        flex: 1,
+        marginRight: 10,
+    },
+    separatorLine: {
+        height: 1,
+        backgroundColor: '#000',
+        width: '100%',
+        marginVertical: 5,
+    },
+    doubleSeparatorLine: {
+        height: 3,  // Made thicker to match the image
+        backgroundColor: '#000',
+        width: '100%',
+        marginVertical: 5,
+    },
+    totalInput: {
+        minWidth: 50,
+        textAlign: 'right',
+        marginBottom: 0,  // Override default margin
     },
 });
 

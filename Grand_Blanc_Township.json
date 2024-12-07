@@ -5,7 +5,10 @@
     "location": {
       "county": "Genesee County",
       "state": "Michigan",
-      "precinct": { "township": "Grand Blanc Township", "number": "9" }
+      "precinct": {
+        "township": "Grand Blanc Township",
+        "number": "9"
+      }
     }
   },
   "voting_system": {
@@ -16,28 +19,77 @@
   "reports": {
     "open_polls": {
       "timestamp": null,
-      "counters": { "ballot_counter": null, "lifetime_counter": null },
-      "status": { "polls_open": null, "accepting_ballots": null }
+      "counters": {
+        "ballot_counter": null,
+        "lifetime_counter": null
+      },
+      "status": {
+        "polls_open": null,
+        "accepting_ballots": null
+      }
     },
     "closed_polls": {
       "timestamp": "2024-10-21T13:22:00",
-      "counters": { "ballot_counter": "28", "lifetime_counter": "9482" },
-      "status": { "polls_open": false, "accepting_ballots": false }
+      "counters": {
+        "ballot_counter": "28",
+        "lifetime_counter": "9482"
+      },
+      "status": {
+        "polls_open": false,
+        "accepting_ballots": false
+      }
     }
   },
-  "tally_report": { "precincts_included": "1" },
+  "tally_report": {
+    "precincts_included": "1"
+  },
   "results": {
     "contests": [
       {
         "title": "Straight Party Ticket",
         "candidates": [
-          { "ticket": ["Democratic Party"], "votes": "7" },
-          { "ticket": ["Republican Party"], "votes": "1" },
-          { "ticket": ["Libertarian Party"], "votes": "6" },
-          { "ticket": ["U.S. Taxpayers Party"], "votes": "2" },
-          { "ticket": ["Green Party"], "votes": "3" },
-          { "ticket": ["Working Class Party"], "votes": "4" },
-          { "ticket": ["Natural Law Party"], "votes": "5" }
+          {
+            "ticket": [
+              "Democratic Party"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Republican Party"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Libertarian Party"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "U.S. Taxpayers Party"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Green Party"
+            ],
+            "votes": "3"
+          },
+          {
+            "ticket": [
+              "Working Class Party"
+            ],
+            "votes": "4"
+          },
+          {
+            "ticket": [
+              "Natural Law Party"
+            ],
+            "votes": "5"
+          }
         ],
         "metadata": {
           "undervotes": "0",
@@ -49,16 +101,55 @@
       {
         "title": "Electors of President and Vice-President of the United States",
         "candidates": [
-          { "ticket": ["Kamala Harris", "Tim Walz"], "votes": "7" },
-          { "ticket": ["Donald J. Trump", "JD Vance"], "votes": "1" },
-          { "ticket": ["Chase Oliver", "Mike ter Maat"], "votes": "6" },
-          { "ticket": ["Randall Terry", "Stephen E. Broden"], "votes": "2" },
           {
-            "ticket": ["Robert F. Kennedy, Jr.", "Nicole Shanahan"],
+            "ticket": [
+              "Kamala Harris",
+              "Tim Walz"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Donald J. Trump",
+              "JD Vance"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Chase Oliver",
+              "Mike ter Maat"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Randall Terry",
+              "Stephen E. Broden"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Robert F. Kennedy, Jr.",
+              "Nicole Shanahan"
+            ],
             "votes": "3"
           },
-          { "ticket": ["Joseph Kishore", "Jerry White"], "votes": "5" },
-          { "ticket": ["Cornel West", "Melina Abdullah"], "votes": "0" }
+          {
+            "ticket": [
+              "Joseph Kishore",
+              "Jerry White"
+            ],
+            "votes": "5"
+          },
+          {
+            "ticket": [
+              "Cornel West",
+              "Melina Abdullah"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "4",
@@ -70,12 +161,42 @@
       {
         "title": "United States Senator",
         "candidates": [
-          { "ticket": ["Elissa Slotkin"], "votes": "7" },
-          { "ticket": ["Mike Rogers"], "votes": "1" },
-          { "ticket": ["Joseph Solis-Mullen"], "votes": "6" },
-          { "ticket": ["Dave Stein"], "votes": "2" },
-          { "ticket": ["Douglas P. Marsh"], "votes": "3" },
-          { "ticket": ["Doug Dern"], "votes": "5" }
+          {
+            "ticket": [
+              "Elissa Slotkin"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Mike Rogers"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Joseph Solis-Mullen"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Dave Stein"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Douglas P. Marsh"
+            ],
+            "votes": "3"
+          },
+          {
+            "ticket": [
+              "Doug Dern"
+            ],
+            "votes": "5"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -87,12 +208,42 @@
       {
         "title": "Representative in Congress 8th District",
         "candidates": [
-          { "ticket": ["Kristen McDonald Rivet"], "votes": "7" },
-          { "ticket": ["Paul Junge"], "votes": "1" },
-          { "ticket": ["Steve Barcelo"], "votes": "6" },
-          { "ticket": ["James Allen Little"], "votes": "2" },
-          { "ticket": ["Jim Casha"], "votes": "3" },
-          { "ticket": ["Kathy Goodwin"], "votes": "4" }
+          {
+            "ticket": [
+              "Kristen McDonald Rivet"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Paul Junge"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Steve Barcelo"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "James Allen Little"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Jim Casha"
+            ],
+            "votes": "3"
+          },
+          {
+            "ticket": [
+              "Kathy Goodwin"
+            ],
+            "votes": "4"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -104,8 +255,18 @@
       {
         "title": "Representative in State Legislature 72nd District",
         "candidates": [
-          { "ticket": ["John Dola"], "votes": "7" },
-          { "ticket": ["Mike Mueller"], "votes": "1" }
+          {
+            "ticket": [
+              "John Dola"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Mike Mueller"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -117,17 +278,72 @@
       {
         "title": "Member of the State Board of Education",
         "candidates": [
-          { "ticket": ["Theodore Jones"], "votes": "7" },
-          { "ticket": ["Adam Frederick Zemke"], "votes": "7" },
-          { "ticket": ["Tom McMillin"], "votes": "1" },
-          { "ticket": ["Nikki Snyder"], "votes": "1" },
-          { "ticket": ["Scotty Boman"], "votes": "6" },
-          { "ticket": ["Ted Gerrard"], "votes": "2" },
-          { "ticket": ["Christine C. Schwartz"], "votes": "2" },
-          { "ticket": ["Mary Anne Hering"], "votes": "4" },
-          { "ticket": ["Ross Snyder"], "votes": "1" },
-          { "ticket": ["Scott Braman"], "votes": "6" },
-          { "ticket": ["Ted Gernand"], "votes": "2" }
+          {
+            "ticket": [
+              "Theodore Jones"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Adam Frederick Zemke"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Tom McMillin"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Nikki Snyder"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Scotty Boman"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Ted Gerrard"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Christine C. Schwartz"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Mary Anne Hering"
+            ],
+            "votes": "4"
+          },
+          {
+            "ticket": [
+              "Ross Snyder"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Scott Braman"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Ted Gernand"
+            ],
+            "votes": "2"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -139,12 +355,42 @@
       {
         "title": "Regent of the University of Michigan",
         "candidates": [
-          { "ticket": ["Denise Ilitch"], "votes": "7" },
-          { "ticket": ["Shauna Ryder Diggs"], "votes": "7" },
-          { "ticket": ["Carl Meyers"], "votes": "1" },
-          { "ticket": ["Sevag Vartanian"], "votes": "1" },
-          { "ticket": ["Andrew Chadderdon"], "votes": "6" },
-          { "ticket": ["Donna M. Oetman"], "votes": "2" }
+          {
+            "ticket": [
+              "Denise Ilitch"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Shauna Ryder Diggs"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Carl Meyers"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Sevag Vartanian"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Andrew Chadderdon"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Donna M. Oetman"
+            ],
+            "votes": "2"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -156,8 +402,18 @@
       {
         "title": "Representative in State Legislature 72nd District",
         "candidates": [
-          { "ticket": ["Jim Casha"], "votes": "7" },
-          { "ticket": ["Mike Mueller"], "votes": "1" }
+          {
+            "ticket": [
+              "Jim Casha"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Mike Mueller"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -169,14 +425,54 @@
       {
         "title": "Trustee of Michigan State University",
         "candidates": [
-          { "ticket": ["Rebecca Bahar-Cook"], "votes": "1" },
-          { "ticket": ["Thomas Stallworth III"], "votes": "1" },
-          { "ticket": ["Mike Balow"], "votes": "1" },
-          { "ticket": ["Julie Maday"], "votes": "1" },
-          { "ticket": ["Grant T. Baker"], "votes": "6" },
-          { "ticket": ["Janet M. Sanger"], "votes": "2" },
-          { "ticket": ["John Paul Sanger"], "votes": "2" },
-          { "ticket": ["John Anthony La Pietra"], "votes": "3" }
+          {
+            "ticket": [
+              "Rebecca Bahar-Cook"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Thomas Stallworth III"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Mike Balow"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Julie Maday"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Grant T. Baker"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "Janet M. Sanger"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "John Paul Sanger"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "John Anthony La Pietra"
+            ],
+            "votes": "3"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -188,15 +484,60 @@
       {
         "title": "Governor of Wayne State University",
         "candidates": [
-          { "ticket": ["Rasha Demashkieh"], "votes": "7" },
-          { "ticket": ["Mark T. Gaffney"], "votes": "7" },
-          { "ticket": ["Michael Busuito"], "votes": "1" },
-          { "ticket": ["Sunny Reddy"], "votes": "1" },
-          { "ticket": ["Farid Ishac"], "votes": "6" },
-          { "ticket": ["William Mohr II"], "votes": "2" },
-          { "ticket": ["Sami Makhoul"], "votes": "3" },
-          { "ticket": ["Suzanne Roehrig"], "votes": "4" },
-          { "ticket": ["Kathleen Oakford"], "votes": "5" }
+          {
+            "ticket": [
+              "Rasha Demashkieh"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Mark T. Gaffney"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Michael Busuito"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Sunny Reddy"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Farid Ishac"
+            ],
+            "votes": "6"
+          },
+          {
+            "ticket": [
+              "William Mohr II"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "Sami Makhoul"
+            ],
+            "votes": "3"
+          },
+          {
+            "ticket": [
+              "Suzanne Roehrig"
+            ],
+            "votes": "4"
+          },
+          {
+            "ticket": [
+              "Kathleen Oakford"
+            ],
+            "votes": "5"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -207,7 +548,14 @@
       },
       {
         "title": "Prosecuting Attorney",
-        "candidates": [{ "ticket": ["David Leyton"], "votes": "7" }],
+        "candidates": [
+          {
+            "ticket": [
+              "David Leyton"
+            ],
+            "votes": "7"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "21",
@@ -218,8 +566,18 @@
       {
         "title": "Sheriff",
         "candidates": [
-          { "ticket": ["Christopher R. Swanson"], "votes": "7" },
-          { "ticket": ["Jeff Salzeider"], "votes": "1" }
+          {
+            "ticket": [
+              "Christopher R. Swanson"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Jeff Salzeider"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -230,7 +588,14 @@
       },
       {
         "title": "Clerk and Register of Deeds",
-        "candidates": [{ "ticket": ["Domonique Clemons"], "votes": "7" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Domonique Clemons"
+            ],
+            "votes": "7"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "21",
@@ -240,7 +605,14 @@
       },
       {
         "title": "Treasurer",
-        "candidates": [{ "ticket": ["Sam E. Muma"], "votes": "7" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Sam E. Muma"
+            ],
+            "votes": "7"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "21",
@@ -251,9 +623,24 @@
       {
         "title": "Drain Commissioner",
         "candidates": [
-          { "ticket": ["Jeff Wright"], "votes": "7" },
-          { "ticket": ["David Niggermeyer"], "votes": "2" },
-          { "ticket": ["David Higginmeyer"], "votes": "2" }
+          {
+            "ticket": [
+              "Jeff Wright"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "David Niggermeyer"
+            ],
+            "votes": "2"
+          },
+          {
+            "ticket": [
+              "David Higginmeyer"
+            ],
+            "votes": "2"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -264,7 +651,14 @@
       },
       {
         "title": "Surveyor",
-        "candidates": [{ "ticket": ["Fred Christensen"], "votes": "7" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Fred Christensen"
+            ],
+            "votes": "7"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "21",
@@ -274,7 +668,14 @@
       },
       {
         "title": "Surveyor",
-        "candidates": [{ "ticket": ["Kim R. Carlson"], "votes": "7" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Kim R. Carlson"
+            ],
+            "votes": "7"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "21",
@@ -285,8 +686,18 @@
       {
         "title": "County Commissioner 5th District",
         "candidates": [
-          { "ticket": ["James Avery"], "votes": "7" },
-          { "ticket": ["John C. Wellington"], "votes": "1" }
+          {
+            "ticket": [
+              "James Avery"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "John C. Wellington"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -298,8 +709,18 @@
       {
         "title": "Supervisor",
         "candidates": [
-          { "ticket": ["Monica Shapiro"], "votes": "7" },
-          { "ticket": ["Scott Bennett"], "votes": "1" }
+          {
+            "ticket": [
+              "Monica Shapiro"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Scott Bennett"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -311,8 +732,18 @@
       {
         "title": "Clerk",
         "candidates": [
-          { "ticket": ["Jet Kilmer"], "votes": "7" },
-          { "ticket": ["David B. Robertson"], "votes": "1" }
+          {
+            "ticket": [
+              "Jet Kilmer"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "David B. Robertson"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -324,8 +755,18 @@
       {
         "title": "Treasurer",
         "candidates": [
-          { "ticket": ["Mike Yancho Sr."], "votes": "7" },
-          { "ticket": ["Bob Brundle"], "votes": "1" }
+          {
+            "ticket": [
+              "Mike Yancho Sr."
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Bob Brundle"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -337,14 +778,54 @@
       {
         "title": "Trustee",
         "candidates": [
-          { "ticket": ["Kevin Harmes"], "votes": "7" },
-          { "ticket": ["Sarah Hugo"], "votes": "7" },
-          { "ticket": ["Jude Rariden"], "votes": "7" },
-          { "ticket": ["Paul J. White"], "votes": "7" },
-          { "ticket": ["Cecelia Adkins"], "votes": "1" },
-          { "ticket": ["Lonnie Adkins"], "votes": "1" },
-          { "ticket": ["Joel Feick"], "votes": "1" },
-          { "ticket": ["Parker Wheatley"], "votes": "1" }
+          {
+            "ticket": [
+              "Kevin Harmes"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Sarah Hugo"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Jude Rariden"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Paul J. White"
+            ],
+            "votes": "7"
+          },
+          {
+            "ticket": [
+              "Cecelia Adkins"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Lonnie Adkins"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Joel Feick"
+            ],
+            "votes": "1"
+          },
+          {
+            "ticket": [
+              "Parker Wheatley"
+            ],
+            "votes": "1"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -356,8 +837,18 @@
       {
         "title": "Justice of Supreme Court 8 Year Term",
         "candidates": [
-          { "ticket": ["Andrew Fink"], "votes": "0" },
-          { "ticket": ["Kimberly Ann Thomas"], "votes": "0" }
+          {
+            "ticket": [
+              "Andrew Fink"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Kimberly Ann Thomas"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -369,8 +860,18 @@
       {
         "title": "Justice of Supreme Court Incumbent Position Partial Term Ending 01/01/2029",
         "candidates": [
-          { "ticket": ["Kyra Harris Bolden"], "votes": "0" },
-          { "ticket": ["Patrick William O'Grady"], "votes": "0" }
+          {
+            "ticket": [
+              "Kyra Harris Bolden"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Patrick William O'Grady"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -382,8 +883,18 @@
       {
         "title": "Judge of Court of Appeals 2nd District Incumbent Position",
         "candidates": [
-          { "ticket": ["Randy J. Wallace"], "votes": "0" },
-          { "ticket": ["Adrienne Nicole Young"], "votes": "0" }
+          {
+            "ticket": [
+              "Randy J. Wallace"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Adrienne Nicole Young"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -395,8 +906,18 @@
       {
         "title": "Judge of Circuit Court 7th Circuit Incumbent Position",
         "candidates": [
-          { "ticket": ["Elizabeth Kelly"], "votes": "0" },
-          { "ticket": ["Brian S. Pickell"], "votes": "0" }
+          {
+            "ticket": [
+              "Elizabeth Kelly"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Brian S. Pickell"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -407,7 +928,14 @@
       },
       {
         "title": "Judge of Circuit Court 7th Circuit Incumbent Position Partial Term Ending 01/01/2029",
-        "candidates": [{ "ticket": ["Mary L. Hamile"], "votes": "0" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Mary L. Hamile"
+            ],
+            "votes": "0"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "28",
@@ -417,7 +945,14 @@
       },
       {
         "title": "Judge of Circuit Court 7th Circuit Incumbent Position Partial Term Ending 01/01/2029",
-        "candidates": [{ "ticket": ["Khary L. Hanible"], "votes": "0" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Khary L. Hanible"
+            ],
+            "votes": "0"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "28",
@@ -428,8 +963,18 @@
       {
         "title": "Judge of Circuit Court 7th Circuit Non-Incumbent Position",
         "candidates": [
-          { "ticket": ["Nancy K. Chinonis"], "votes": "0" },
-          { "ticket": ["Mary Hood"], "votes": "0" }
+          {
+            "ticket": [
+              "Nancy K. Chinonis"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Mary Hood"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -440,7 +985,14 @@
       },
       {
         "title": "Judge of Probate Court Incumbent Position",
-        "candidates": [{ "ticket": ["Ariana E. Heath"], "votes": "0" }],
+        "candidates": [
+          {
+            "ticket": [
+              "Ariana E. Heath"
+            ],
+            "votes": "0"
+          }
+        ],
         "metadata": {
           "write_ins": "0",
           "undervotes": "28",
@@ -451,8 +1003,18 @@
       {
         "title": "Judge of District Court 67th District, 4th Division Non-Incumbent Position",
         "candidates": [
-          { "ticket": ["Jeffrey E. Clothier"], "votes": "0" },
-          { "ticket": ["Amanda Odette"], "votes": "0" }
+          {
+            "ticket": [
+              "Jeffrey E. Clothier"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Amanda Odette"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -464,20 +1026,90 @@
       {
         "title": "Board of Trustee Member Mott Community College",
         "candidates": [
-          { "ticket": ["Mary Davis"], "votes": "0" },
-          { "ticket": ["Kenyetta V. Dotson"], "votes": "0" },
-          { "ticket": ["Andy Everman"], "votes": "0" },
-          { "ticket": ["Anne Figueroa"], "votes": "0" },
-          { "ticket": ["Aron Gerics"], "votes": "0" },
-          { "ticket": ["Gail L. Johnson"], "votes": "0" },
-          { "ticket": ["Jenna Rose Marden"], "votes": "0" },
-          { "ticket": ["Candice Miller"], "votes": "0" },
-          { "ticket": ["Virginia A. Sepanak"], "votes": "0" },
-          { "ticket": ["Jeffrey R. Swanson"], "votes": "0" },
-          { "ticket": ["Richard Wagonlander"], "votes": "0" },
-          { "ticket": ["Amanda Wares"], "votes": "0" },
-          { "ticket": ["Andrew Watchorn"], "votes": "0" },
-          { "ticket": ["Perci Whitmore"], "votes": "0" }
+          {
+            "ticket": [
+              "Mary Davis"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Kenyetta V. Dotson"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Andy Everman"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Anne Figueroa"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Aron Gerics"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Gail L. Johnson"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Jenna Rose Marden"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Candice Miller"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Virginia A. Sepanak"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Jeffrey R. Swanson"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Richard Wagonlander"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Amanda Wares"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Andrew Watchorn"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Perci Whitmore"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "0",
@@ -488,14 +1120,35 @@
       },
       {
         "title": "Judge of Circuit Court 7th Circuit Incumbent Position Partial Term Ending 01/01/2029",
-        "candidates": [{ "ticket": ["Kirsty L. Hinslie"], "votes": "0" }],
-        "metadata": { "write_ins": "0", "undervotes": "28", "overvotes": "0" }
+        "candidates": [
+          {
+            "ticket": [
+              "Kirsty L. Hinslie"
+            ],
+            "votes": "0"
+          }
+        ],
+        "metadata": {
+          "write_ins": "0",
+          "undervotes": "28",
+          "overvotes": "0"
+        }
       },
       {
         "title": "Grand Blanc Community Schools Board Member",
         "candidates": [
-          { "ticket": ["Ethan J. Lang"], "votes": "0" },
-          { "ticket": ["Kelly Ryckaert"], "votes": "0" }
+          {
+            "ticket": [
+              "Ethan J. Lang"
+            ],
+            "votes": "0"
+          },
+          {
+            "ticket": [
+              "Kelly Ryckaert"
+            ],
+            "votes": "0"
+          }
         ],
         "metadata": {
           "write_ins": "28",
@@ -508,7 +1161,10 @@
   },
   "totals": {
     "precinct_ballot_count": {
-      "precinct": { "name": "Grand Blanc Township Precinct 9", "total": "28" },
+      "precinct": {
+        "name": "Grand Blanc Township Precinct 9",
+        "total": "28"
+      },
       "grand_total": "28"
     }
   }
