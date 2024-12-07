@@ -4,7 +4,7 @@ import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from './_layout';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
-import sampleData from '../sample.json'; // Import the JSON data
+import sampleData from '../Grand_Blanc_Township.json'; // Import the JSON data
 
 type HomeScreenNavigationProp = NavigationProp<RootStackParamList, 'Home'>;
 

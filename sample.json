@@ -7,7 +7,7 @@
             "state": "Michigan",
             "precinct": {
                 "township": "Ann Arbor",
-                "number": 12
+                "number": "12"
             }
         }
     },
@@ -20,8 +20,8 @@
         "open_polls": {
             "timestamp": "2024-11-05T07:00:00",
             "counters": {
-                "ballot_counter": 0,
-                "lifetime_counter": 12567
+                "ballot_counter": "0",
+                "lifetime_counter": "12567"
             },
             "status": {
                 "polls_open": true,
@@ -31,8 +31,8 @@
         "closed_polls": {
             "timestamp": "2024-11-05T20:00:00",
             "counters": {
-                "ballot_counter": 432,
-                "lifetime_counter": 13000
+                "ballot_counter": "432",
+                "lifetime_counter": "13000"
             },
             "status": {
                 "polls_open": false,
