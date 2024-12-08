@@ -12,7 +12,6 @@ export type RootStackParamList = {
     pollTapeData: any;
     onSave?: (updatedData: any) => void;
   };
-  // ... other routes
 };
 
 
