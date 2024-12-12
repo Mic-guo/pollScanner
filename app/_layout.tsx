@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from "./home";
 import Camera from "./camera";
 import Review from "./review";
+import Guidelines from './guidelines';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -12,6 +13,7 @@ export type RootStackParamList = {
     pollTapeData: any;
     onSave?: (updatedData: any) => void;
   };
+  Guidelines: undefined;
 };
 
 
@@ -24,6 +26,7 @@ export default function RootLayout() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Camera" component={Camera} />
         <Stack.Screen name="Review" component={Review} />
+        <Stack.Screen name="Guidelines" component={Guidelines} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
